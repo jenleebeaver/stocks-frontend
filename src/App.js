@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-  //access fetch request 
+  //testing access to fetch request 
   componentDidMount() {
     fetch('http://localhost:3000/api/v1/portfolios', {
       method: 'GET'
@@ -11,8 +11,8 @@ class App extends Component {
     //promise - response from request
     //return => arg
     .then(response => response.json())
-    .then(data => {
-      console.log(data)
+    .then(portfoliodata => {
+      console.log(portfoliodata)
     })
   }
 
