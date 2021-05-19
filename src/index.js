@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux'
+//where redux lives 
+
+//1.set up store 
+
+//
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,3 +23,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+//package.json has all of our react version info
