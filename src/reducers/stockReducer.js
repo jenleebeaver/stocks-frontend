@@ -1,0 +1,1 @@
+//responsible for updating parts of the store associated with stock 
