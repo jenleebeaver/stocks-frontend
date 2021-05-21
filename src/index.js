@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//compose combines middleWares
+//compose combines middleWares and store enhancers
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
+import portfolioReducer from './reducers/portfolioReducer';
+// import stockReducer from './reducers/stockReducer';
 //where redux lives 
 
 //enable Redux DevTools Extension 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //storing global data, sending action object -> reducers decide what to update -> return new store
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+let store = createStore(portfolioReducer, storeEnhancers(applyMiddleware(thunk)))
 
 //
 
@@ -26,6 +28,9 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+//action -> reducer -> store
+// dispatch(actionObject)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
