@@ -1,19 +1,16 @@
 import './App.css';
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+//curly braces are used when we don't have export default 
+import {fetchPortfolios} from './actions/fetchPortfolios';
 
 class App extends Component {
 
   //testing access to fetch request 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/portfolios', {
-      method: 'GET'
-    })
-    //promise - response from request
-    //return => arg
-    .then(response => response.json())
-    .then(portfoliodata => {
-      console.log(portfoliodata)
-    })
+  //here we would put a fetch request, but moved to actions/fetchPortfolios and are using fetchPortfolios as a prop
+  //passing in arg of action object
+  this.props.fetchPortfolios({type: 'FETCH_PORTFOLIOS', payload: {s: '', p: '', updated_at: ''}})
   }
 
   render(){
@@ -27,4 +24,12 @@ class App extends Component {
   }
 }
 
-export default App;
+//updates redux store
+const mapStateToProps = (state) => {
+  return {
+    portfolios: state.portfolios
+  }
+}
+
+//can add mapDispatchToProps, but {fetchPortfolios} works the same. Sending data to store to act as props
+export default connect(mapStateToProps, {fetchPortfolios})(App);
