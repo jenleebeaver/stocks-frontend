@@ -11,7 +11,7 @@ export function fetchPortfolios(action){
         .then(response => response.json())
         .then(portfolios => 
         //update redux store
-        //dispatch action object with a type and payload and update redux store 
+        //dispatch action object with a type and payload -> reducer -> updates redux store 
         dispatch({
             type: 'FETCH_PORTFOLIOS',
             payload: portfolios

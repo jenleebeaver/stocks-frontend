@@ -6,7 +6,7 @@ import {fetchPortfolios} from '../actions/fetchPortfolios';
 
 class PortfoliosContainer extends Component {
 
-    //use props to connect to redux store 
+    //use props to connect to redux store. accesses fetchPortfolios which has fetch request to backend.  
     componentDidMount(){
         this.props.fetchPortfolios()
     }
@@ -16,7 +16,7 @@ class PortfoliosContainer extends Component {
             <div>
                 Portfolios Container
                 <PortfolioInput /> 
-                <Portfolios />
+                <Portfolios portfolios={this.props.portfolios}/>
             </div>
         )
     }

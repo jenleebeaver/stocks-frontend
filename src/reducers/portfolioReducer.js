@@ -3,6 +3,11 @@
 //keep initial state as an array inside object 
 export default function portfolioReducer(state = {portfolios: []}, action) {
 
-    return state 
-
+    switch (action.type){
+        case 'FETCH_PORTFOLIOS':
+            //returning new version of action object (our new redux state)
+            return {portfolios: action.payload}
+        default:
+            return state
+    }
 };
