@@ -8,13 +8,13 @@ const Portfolios = (props) => {
     //props is an object with portfolios -> array (being passed from Portfolios Container)
     return (
         <div>
-            <h1>Portfolios</h1>
+            <h2>Portfolios</h2>
                 {/* iterate over each portfolio and use JSX tags */}
                
                 {props.portfolios.map(portfolio =>
                 <ul key={portfolio.id} id="portfolio-list">
                     <li> 
-                        <h1>{portfolio.username}</h1> 
+                        <h3>{portfolio.portfolio_name}</h3> 
                         <PortfoliosTable portfolios={portfolio}/> 
                     </li>  
                 </ul>
