@@ -7,6 +7,8 @@ export default function portfolioReducer(state = {portfolios: []}, action) {
         case 'FETCH_PORTFOLIOS':
             //returning new version of action object (our new redux state)
             return {portfolios: action.payload}
+        case 'ADD_PORTFOLIO':
+            return {...state, portfolios: [...state.portfolios, action.payload]}
         default:
             return state
     }
