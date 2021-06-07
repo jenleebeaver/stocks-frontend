@@ -8,10 +8,8 @@ class PortfolioInput extends Component {
     //local state not redux store 
     state = {
         portfolio_name: '',
-        s: '',
-        p: ''
-        // created_at: '',
-        // updated_at: ''    
+        created_at: '',
+        updated_at: ''    
     }
 
     handlePortfolioNameChange = (e) => {
@@ -38,8 +36,8 @@ class PortfolioInput extends Component {
         this.props.addPortfolio(this.state)
         this.setState({
            portfolio_name: '',
-           s: '',
-           p: ''
+           created_at: '',
+           updated_at: '' 
         })
     }
 
@@ -56,16 +54,6 @@ class PortfolioInput extends Component {
                     value={this.state.portfolio_name}
                     name="portfolio_name"
                     onChange={this.handlePortfolioNameChange}/>
-                    <input type="text" 
-                    placeholder="Enter symbol dummy data" 
-                    value={this.state.s}
-                    name="s"
-                    onChange={this.handleSChange}/>
-                    <input type="text" 
-                    placeholder="Enter price dummy data " 
-                    value={this.state.p}
-                    name="p"
-                    onChange={this.handlePChange}/>
                     <br/>
                     <br/>
                      <button type="submit">Submit</button>
