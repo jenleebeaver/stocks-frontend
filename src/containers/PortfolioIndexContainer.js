@@ -3,6 +3,7 @@ import Portfolios from '../components/Portfolios';
 // import PortfolioInput from '../components/PortfolioInput';
 import {connect} from 'react-redux';
 import {fetchPortfolios} from '../actions/fetchPortfolios';
+import PortfolioInput from '../components/PortfolioInput';
 
 class PortfoliosContainer extends Component {
     state = {
@@ -21,17 +22,17 @@ class PortfoliosContainer extends Component {
     render() {
         return (
             <>
-            
-            <section className="max-w-6xl mx-auto mt-16">
-                {this.state.loading
-                ? ( <img width="100" height="100" src="https://media.giphy.com/media/l31p1SkNXGz3l1nwwu/giphy.gif" /> )
-                : ( <Portfolios portfolios={this.props.portfolios} /> )}
-            </section>
-            </>
-            // <div>
-            //     {/* <PortfolioInput /> 
-            //     <Portfolios portfolios={this.props.portfolios}/> */}
-            // </div>
+            <div>
+                <section className="max-w-6xl mx-auto mt-16">
+                    {this.state.loading
+                    ? ( <img width="100" height="100" src="https://media.giphy.com/media/l31p1SkNXGz3l1nwwu/giphy.gif" alt="Loading..." /> )
+                    : ( <Portfolios portfolios={this.props.portfolios} /> )}
+                </section>
+            </div>
+            <div>
+                <PortfolioInput /> 
+            </div>
+            </>   
         )
     }
 }
