@@ -6,29 +6,28 @@ import {fetchPortfolios} from '../actions/fetchPortfolios';
 
 class PortfoliosContainer extends Component {
     state = {
-        portfolios: [],
-        loading: true,
+        loading: true
     }
 
     //use props to connect to redux store. accesses fetchPortfolios which has fetch request to backend.  
     componentDidMount() {
         setTimeout(() => {
-            this.setState({
-                portfolios: [
-                    this.props.fetchPortfolios()
-                ],
-                loading: false,
-            })
-        }, 1000)
-        }   
+            this.props.fetchPortfolios()
+            .then(x => this.setState({ loading: false }))
+        }, Math.random() * 1000)
+        
+    }   
 
     render() {
         return (
+            <>
+            
             <section className="max-w-6xl mx-auto mt-16">
                 {this.state.loading
-                ? ( 'loading spinner' )
-                : ( <Portfolios portfolios={this.state.portfolios} /> )}
+                ? ( <img width="100" height="100" src="https://media.giphy.com/media/l31p1SkNXGz3l1nwwu/giphy.gif" /> )
+                : ( <Portfolios portfolios={this.props.portfolios} /> )}
             </section>
+            </>
             // <div>
             //     {/* <PortfolioInput /> 
             //     <Portfolios portfolios={this.props.portfolios}/> */}
