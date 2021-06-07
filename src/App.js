@@ -1,9 +1,16 @@
 import './App.css';
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from 'react-router-dom';
 import {connect} from 'react-redux';
 //curly braces are used when we don't have export default 
 import {fetchPortfolios} from './actions/fetchPortfolios';
-import PortfoliosContainer from './containers/PortfoliosContainer';
+import PortfolioIndexContainer from './containers/PortfolioIndexContainer';
+import StocksContainer from './containers/StocksContainer';
 
 class App extends Component {
 
@@ -18,10 +25,36 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+          <Router>
+           <nav>
+             <NavLink 
+              className="inline-block px-4 py-2"
+              activeClassName="text-purple-300"
+              exact to="/">
+               List of Portfolios
+            </NavLink>
+            <NavLink 
+              className="inline-block px-4 py-2"
+              activeClassName="text-purple-300"
+              exact to="/portfolios/new">
+               Portfolio
+            </NavLink>
+           </nav>
+          <Switch>
+            <Route exact path="/">
+              <PortfolioIndexContainer />
+            </Route>
+            <Route path="/portfolios/new">
+              Portfolio
+            </Route>
+           </Switch>
+        </Router>  
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
         </header>
-        <PortfoliosContainer />
+        <br/>
+        <br/>
+        <StocksContainer />
       </div>
     );
   }
