@@ -7,6 +7,7 @@ import Portfolio from './Portfolio.js'
 //can also pass in specific props if neccessary 
 const Portfolios = (props) => {
     //props is an object with portfolios -> array (being passed from Portfolios Container)
+    console.log(props.portfolios);
     return (
         <div>
             <h2>
@@ -15,7 +16,7 @@ const Portfolios = (props) => {
                 {/* iterate over each portfolio and use JSX tags */}
             <ul>
                 {props.portfolios.map(portfolio => (
-                    <Portfolio key={portfolio.id} portfolio={portfolio} id="portfolio-list" /> 
+                    <Portfolio key={portfolio.id} portfolio={portfolio} /> 
                 ))}
             </ul>
         </div>
