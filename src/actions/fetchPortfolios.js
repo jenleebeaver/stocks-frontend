@@ -3,7 +3,7 @@
 export function fetchPortfolios(action){
     console.log('inside fetch portfolios.')
     return (dispatch) => {
-      fetch('http://localhost:3000/api/v1/portfolios', {
+      return fetch('http://localhost:3000/api/v1/portfolios', {
       method: 'GET',
       headers: {
           'Accept': 'application/json',
@@ -15,7 +15,8 @@ export function fetchPortfolios(action){
         .then(response => response.json())
         .then(portfolios => 
         //update redux store
-        //dispatch action object with a type and payload -> reducer -> updates redux store 
+        //dispatch action object with a type and payload -> reducer -> updates redux store
+        
         dispatch({
             type: 'FETCH_PORTFOLIOS',
             payload: portfolios
