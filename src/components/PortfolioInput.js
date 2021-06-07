@@ -43,20 +43,28 @@ class PortfolioInput extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div class="grid grid-cols-2">
+                {/* work on padding with tailwindcss */}
+                <form onSubmit={this.handleSubmit}
+                    className="max-w-xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl font-semibold">
                     {/* values give us control over the DOM in a controlled form  */}
                     <label>
-                        <h4>Create a Portfolio</h4>
+                        <h4 className="text-center text-l">Create a Portfolio</h4>
                     </label>
-                    <input type="text" 
-                    placeholder="Enter Portfolio Name" 
-                    value={this.state.portfolio_name}
-                    name="portfolio_name"
-                    onChange={this.handlePortfolioNameChange}/>
+                    <fieldset>
+                        <input type="text" 
+                            placeholder="Enter Portfolio Name" 
+                            value={this.state.portfolio_name}
+                            name="portfolio_name"
+                            className="text-center w-full border p-4 my-4"
+                            onChange={this.handlePortfolioNameChange}/>
+                    </fieldset>
                     <br/>
                     <br/>
-                     <button type="submit">Submit</button>
+                     <button className="w-full p-3 bg-purple-300 hover:bg-purple-400 transition-all duration-200 rounded-xl"
+                     type="submit">
+                         Add Portfolio
+                    </button>
                 </form>
             </div>
         )
