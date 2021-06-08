@@ -1,15 +1,18 @@
 import React from 'react';
+import PricesTable from './pricesTable.js';
 
 // c is current price 
 
 const Price = ({
-        c
+        prices
 }) => {
     return (
-        <div key={c}
+        <div
             className="current-price">
                 <h4>Current Price:</h4>
-                {c}
+                {prices.c}
+                <br/>
+                <PricesTable prices={prices}/>
             {/* use shape for company Profile 2 data */}
             {/* <header>
                 <a className="stock-link"
