@@ -10,7 +10,8 @@ import {connect} from 'react-redux';
 //curly braces are used when we don't have export default 
 import {fetchPortfolios} from './actions/fetchPortfolios';
 import PortfolioIndexContainer from './containers/PortfolioIndexContainer';
-import StocksContainer from './containers/StocksContainer';
+import PortfolioContainer from './containers/PortfolioContainer';
+// import StocksContainer from './containers/StocksContainer';
 
 class App extends Component {
 
@@ -28,25 +29,30 @@ class App extends Component {
           <Router>
            <nav>
              <NavLink 
-              className="inline-block px-4 py-2"
+              className="inline-block px-4 py-2 hover:underline"
               activeClassName="text-purple-300"
               exact to="/">
-               List of Portfolios
+              Portfolios
             </NavLink>
-            <NavLink 
+            {/* <NavLink 
               className="inline-block px-4 py-2"
               activeClassName="text-purple-300"
               exact to="/portfolios/new">
                Portfolio
-            </NavLink>
+            </NavLink> */}
            </nav>
           <Switch>
+          <Route 
+            exact 
+            path="/portfolio/:id" 
+            component={PortfolioContainer}
+          />
             <Route exact path="/">
               <PortfolioIndexContainer />
             </Route>
-            <Route path="/portfolios/new">
+            {/* <Route path="/portfolios/new">
               Portfolio
-            </Route>
+            </Route> */}
            </Switch>
         </Router>  
         <header className="App-header">
@@ -54,7 +60,7 @@ class App extends Component {
         </header>
         <br/>
         <br/>
-        <StocksContainer />
+        {/* <StocksContainer /> */}
       </div>
     );
   }
