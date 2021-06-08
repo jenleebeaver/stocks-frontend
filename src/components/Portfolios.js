@@ -1,13 +1,14 @@
 //List of Portfolios
 import React from 'react';
 // import PortfoliosTable from './portfoliosTable.js'
-import Portfolio from './Portfolio.js'
+import {
+  Link
+} from "react-router-dom";
 
 //functional. props need to be passed in as an arg unlike class components where we can call this.props 
 //can also pass in specific props if neccessary 
 const Portfolios = (props) => {
     //props is an object with portfolios -> array (being passed from Portfolios Container)
-    console.log(props.portfolios);
     return (
         <div>
             <h2>
@@ -16,7 +17,10 @@ const Portfolios = (props) => {
                 {/* iterate over each portfolio and use JSX tags */}
             <ul>
                 {props.portfolios.map(portfolio => (
-                    <Portfolio key={portfolio.id} portfolio={portfolio} /> 
+                    <li key={portfolio.id}>
+                    {/* <Portfolio key={portfolio.id} portfolio={portfolio} /> */}
+                    <Link className="hover:underline" to={`/portfolio/${portfolio.id}`}>{ portfolio.portfolio_name }</Link>
+                    </li> 
                 ))}
             </ul>
         </div>
