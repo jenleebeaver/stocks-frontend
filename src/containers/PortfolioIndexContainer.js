@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {fetchPortfolios} from '../actions/fetchPortfolios';
 import PortfolioInput from '../components/PortfolioInput';
 
-class PortfoliosContainer extends Component {
+class PortfoliosIndexContainer extends Component {
     state = {
         loading: true
     }
@@ -44,5 +44,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {fetchPortfolios})(PortfoliosContainer)
+export default connect(mapStateToProps, {fetchPortfolios})(PortfoliosIndexContainer)
 //render class container component in app.js
