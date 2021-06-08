@@ -7,9 +7,7 @@ class PortfolioInput extends Component {
 
     //local state not redux store 
     state = {
-        portfolio_name: '',
-        created_at: '',
-        updated_at: ''    
+        portfolio_name: ''   
     }
 
     handlePortfolioNameChange = (e) => {
@@ -18,32 +16,18 @@ class PortfolioInput extends Component {
         })
     }
 
-    handleSChange = (e) => {
-        this.setState({
-            s: e.target.value,
-        })
-    }
-
-    handlePChange = (e) => {
-        this.setState({
-            p: e.target.value,
-        })
-    }
-
     handleSubmit = (e) => {
         //keeps our data in our inputs after submit and prevents page refresh
         e.preventDefault()
         this.props.addPortfolio(this.state)
         this.setState({
-           portfolio_name: '',
-           created_at: '',
-           updated_at: '' 
+           portfolio_name: '' 
         })
     }
 
     render() {
         return (
-            <div class="grid grid-cols-2">
+            <div className="grid grid-cols-2">
                 {/* work on padding with tailwindcss */}
                 <form onSubmit={this.handleSubmit}
                     className="max-w-xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl font-semibold">
