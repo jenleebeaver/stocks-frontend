@@ -9,8 +9,10 @@ const Price = ({
     return (
         <div
             className="current-price">
-                <h4>Current Price:</h4>
-                {prices.c}
+                <h4 className="text-center text-l font-semibold">
+                    Current Price:
+                </h4>
+                <p className="text-center">{prices.c}</p>
                 <br/>
                 <PricesTable prices={prices}/>
             {/* use shape for company Profile 2 data */}
