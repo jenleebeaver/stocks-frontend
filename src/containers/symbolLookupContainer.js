@@ -1,7 +1,7 @@
   
 import React, { Component } from 'react';
 import 'isomorphic-fetch';
-import StockSymbol from '../components/StockSymbol';
+import StockSymbolCard from '../components/StockSymbolCard';
 
 function getSearch(searchTerm) {
     const BASE_URL =
@@ -34,13 +34,15 @@ class SymbolLookupContainer extends Component {
         <div >
           <form onSubmit={this.handleSubmit}
             className="max-w-xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl font-semibold">
-            <label htmlFor="search-input"
-                className="text-center text-l">
-                    Search For Stock Symbol Using Symbol, Name, Isin, or Cusip
+            <label htmlFor="search-input">
+                <h4 className="text-center text-l">
+                    Search For Stock Symbol
+                </h4>
             </label>
             <input
               id="search-input"
               type="text"
+              placeholder="Search For Stock Symbol Using Symbol, Name, Isin, or Cusip"
               name="stock_symbol_input"
               className="text-center w-full border p-4 my-4"
               onChange={this.handleSearchInputChange}
@@ -52,7 +54,7 @@ class SymbolLookupContainer extends Component {
           </form>
        
          <div className="grid md:grid-flow-col grid-cols-3 grid-rows-3 gap-4">
-          {this.state.results.map(entry => <StockSymbol data={entry} />)}
+          {this.state.results.map(entry => <StockSymbolCard data={entry} />)}
          </div>
         </div>
       );
