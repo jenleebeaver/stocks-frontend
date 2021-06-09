@@ -47,7 +47,7 @@ export default function PricesTable(props) {
     } = tableInstance 
 
     return (
-        <table {...getTableProps()}>
+        <table className="text-center w-full border p-4 my-4" {...getTableProps()}>
             <thead>
                 {/* loop over header rows */}
                 {headerGroups.map(headerGroup => (
