@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import 'isomorphic-fetch';
 import Portfolio from '../components/Portfolio.js'
-import SearchStockPricesContainer from '../components/searchStockPrices.js';
+import SearchStockPricesContainer from './searchStockPrices.js';
+import SymbolLookupContainer from './symbolLookupContainer.js';
 
 
 class PortfolioContainer extends Component {
@@ -21,11 +22,12 @@ class PortfolioContainer extends Component {
     render() {
         return (
             <div className="stocks-container">
-                <h2>
+                <h1 className="text-center text-xl">
                     <b>{this.state.portfolio.portfolio_name}</b>
-                </h2>
+                </h1>
                 <br/>
                 <Portfolio portfolio={ this.state.portfolio }/>
+                <SymbolLookupContainer />
                 <SearchStockPricesContainer />
             </div>
         )
