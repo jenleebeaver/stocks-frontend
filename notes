@@ -1,2 +1,6 @@
  Design:
 add bootstrap - 'gem 'bootstrap', '~> 4.3.1'
+
+Finish:
+-return error in searchStocks when entering wrong symbol
+-in Prices may need to search for symbol based on company name 
