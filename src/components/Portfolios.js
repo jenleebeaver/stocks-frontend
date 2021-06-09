@@ -12,7 +12,7 @@ const Portfolios = (props) => {
     return (
         <div>
             <h2>
-                <b>Portfolios</b>
+                <b>Current Portfolios</b>
             </h2>
                 {/* iterate over each portfolio and use JSX tags */}
             <ul>
