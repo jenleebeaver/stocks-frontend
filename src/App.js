@@ -11,6 +11,7 @@ import {connect} from 'react-redux';
 import {fetchPortfolios} from './actions/fetchPortfolios';
 import PortfolioIndexContainer from './containers/PortfolioIndexContainer';
 import PortfolioContainer from './containers/PortfolioContainer';
+import CryptoCurrencyIndexContainer from './containers/CryptocurrencyIndexContainer';
 // import StocksContainer from './containers/StocksContainer';
 
 class App extends Component {
@@ -34,12 +35,12 @@ class App extends Component {
               exact to="/">
               Portfolios
             </NavLink>
-            {/* <NavLink 
+            <NavLink 
               className="inline-block px-4 py-2"
               activeClassName="text-purple-300"
-              exact to="/portfolios/new">
-               Portfolio
-            </NavLink> */}
+              exact to="/cryptocurrency">
+               CryptoCurrency
+            </NavLink>
            </nav>
           <Switch>
           <Route 
@@ -50,9 +51,9 @@ class App extends Component {
             <Route exact path="/">
               <PortfolioIndexContainer />
             </Route>
-            {/* <Route path="/portfolios/new">
-              Portfolio
-            </Route> */}
+            <Route path="/cryptocurrency">
+              <CryptoCurrencyIndexContainer />
+            </Route>
            </Switch>
         </Router>  
         <header className="App-header">
