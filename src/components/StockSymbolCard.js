@@ -4,7 +4,7 @@ const Result = ({
  data
 }) => {
   return (
-
+  
     <div
       // className="result"
       className="max-w-xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl"
