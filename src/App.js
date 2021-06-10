@@ -44,14 +44,13 @@ class App extends Component {
            </nav>
           <Switch>
           <Route 
-            exact 
-            path="/portfolio/:id" 
+            exact path="/portfolio/:id" 
             component={PortfolioContainer}
           />
             <Route exact path="/">
               <PortfolioIndexContainer />
             </Route>
-            <Route path="/cryptocurrency">
+            <Route exact path="/cryptocurrency">
               <CryptoCurrencyIndexContainer />
             </Route>
            </Switch>
