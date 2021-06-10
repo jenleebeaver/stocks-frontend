@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Portfolios from '../components/Portfolios';
-// import PortfolioInput from '../components/PortfolioInput';
 import {connect} from 'react-redux';
 import {fetchPortfolios} from '../actions/fetchPortfolios';
 import PortfolioInput from '../components/PortfolioInput';
