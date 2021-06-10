@@ -1,6 +1,5 @@
 //List of Portfolios
 import React from 'react';
-// import PortfoliosTable from './portfoliosTable.js'
 import {
   Link
 } from "react-router-dom";
