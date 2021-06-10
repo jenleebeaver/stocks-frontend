@@ -15,7 +15,6 @@ class PortfoliosIndexContainer extends Component {
             this.props.fetchPortfolios()
             .then(x => this.setState({ loading: false }))
         }, Math.random() * 1000)
-        
     }   
 
     render() {
