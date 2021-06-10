@@ -1,5 +1,4 @@
 
-//!check out some learn lessons examples
 export function fetchPortfolios(action){
     console.log('inside fetch portfolios.')
     return (dispatch) => {
