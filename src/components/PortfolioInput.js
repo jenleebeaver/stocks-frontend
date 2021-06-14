@@ -20,6 +20,7 @@ class PortfolioInput extends Component {
         //keeps our data in our inputs after submit and prevents page refresh
         e.preventDefault()
         this.props.addPortfolio(this.state)
+        //clears our store after submit. asynchronous. 
         this.setState({
            portfolio_name: '' 
         })
