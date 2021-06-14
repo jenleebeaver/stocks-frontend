@@ -54,7 +54,9 @@ class SymbolLookupContainer extends Component {
           </form>
        
          <div className="grid md:grid-flow-col grid-cols-3 grid-rows-3 gap-4">
-          {this.state.results.map(entry => <StockSymbolCard data={entry} />)}
+            {this.state.results.map(entry => 
+            <StockSymbolCard data={entry} key={this.state.results.id} />)
+            }
          </div>
         </div>
       );
