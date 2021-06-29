@@ -12,6 +12,7 @@ import {fetchPortfolios} from './actions/fetchPortfolios';
 import PortfolioIndexContainer from './containers/PortfolioIndexContainer';
 import PortfolioContainer from './containers/PortfolioContainer';
 import CryptoCurrencyIndexContainer from './containers/CryptocurrencyIndexContainer';
+import AboutContainer from './containers/AboutContainer';
 // import StocksContainer from './containers/StocksContainer';
 
 class App extends Component {
@@ -41,6 +42,12 @@ class App extends Component {
               exact to="/cryptocurrency">
                CryptoCurrency
             </NavLink>
+            <NavLink 
+              className="inline-block px-4 py-2"
+              activeClassName="text-purple-300"
+              exact to="/about">
+               About
+            </NavLink>
            </nav>
           <Switch>
           <Route 
@@ -52,6 +59,9 @@ class App extends Component {
             </Route>
             <Route exact path="/cryptocurrency">
               <CryptoCurrencyIndexContainer />
+            </Route>
+            <Route exact path="/about">
+              <AboutContainer />
             </Route>
            </Switch>
         </Router>  
