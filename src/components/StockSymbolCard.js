@@ -3,6 +3,16 @@ import React from 'react';
 const Result = ({
  data
 }) => {
+
+  const handleSubmit = e => {
+    // e.preventDefault;
+    console.log('test')
+    console.log(data)
+    fetch(data)
+    .then(res => res.json())
+    
+  }
+
   return (
   
     <div
@@ -16,6 +26,11 @@ const Result = ({
       <h3 className="font-semibold">Type:</h3> 
       <p>{data.type}</p>
       <h4 className="font-semibold">Description:</h4><p>{data.description}</p>
+      <br/>
+      <button onClick={handleSubmit}
+              className="w-full p-3 bg-purple-300 hover:bg-purple-400 transition-all duration-200 rounded-xl">
+        Submit
+      </button>
     </div>
   );
 };
