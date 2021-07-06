@@ -1,10 +1,4 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    NavLink,
-  } from 'react-router-dom';
 
 export default class AboutContainer extends Component {
 
@@ -12,9 +6,9 @@ export default class AboutContainer extends Component {
         return (
             <div>
                 <p className="text-center text-xl p-24">
-                Stock app using the <a href="https://finnhub.io">finnhub.io</a> API.
+                Stock app using the <a href="https://finnhub.io" className="text-purple-300 hover:underline">finnhub.io</a> API.
 
-                Built by <a href="https://www.linkedin.com/in/jenniferleebeaver/">Jennifer Beaver</a>. 
+                Built by <a href="https://www.linkedin.com/in/jenniferleebeaver/" className="text-purple-300 hover:underline">Jennifer Beaver</a>. 
                 </p>
             </div>
         )
