@@ -1,3 +1,8 @@
+# Overview 
+Stocks app using the <a href="https://finnhub.io">finnhub.io</a> api. 
+Includes stock search feature and a React-Table to display ticker data. 
+Prototype in tailwindcss.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
