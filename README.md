@@ -18,3 +18,6 @@ Prototype in tailwindcss.
 ## Edge-cases
 - returns null in when "." in symbol search 
 - container spread display unequal
+
+## Ideas
+- play around with z-index in CSS
