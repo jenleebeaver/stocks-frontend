@@ -10,8 +10,11 @@ Prototype in tailwindcss.
 - build out watchlist 
 
 </br>
-</br>
 
-## Use 
+## Run 
 - Run stocks-backend repo </br>
 - Run npm start 
+
+## Edge-cases
+- returns null in when "." in symbol search 
+- container spread display unequal
