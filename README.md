@@ -13,5 +13,5 @@ Prototype in tailwindcss.
 </br>
 
 ## Use 
-Run stocks-backend repo </br>
-Run npm start 
+- Run stocks-backend repo </br>
+- Run npm start 
