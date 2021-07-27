@@ -10,7 +10,9 @@ class PortfolioInput extends Component {
         portfolio_name: ''   
     }
 
-    handlePortfolioNameChange = (e) => {
+    //setState inherited from Component 
+    //note use of bind in JSX onChange because there is no use of arrow function
+    handlePortfolioNameChange(e) {
         this.setState({
             portfolio_name: e.target.value,
         })
@@ -42,7 +44,8 @@ class PortfolioInput extends Component {
                             value={this.state.portfolio_name}
                             name="portfolio_name"
                             className="text-center w-full border p-4 my-4"
-                            onChange={this.handlePortfolioNameChange}/>
+                            // use bind() to add to this when not using arrow function 
+                            onChange={this.handlePortfolioNameChange.bind(this)}/>
                     </fieldset>
                     <br/>
                     <br/>
