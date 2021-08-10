@@ -12,8 +12,8 @@ Prototype in tailwindcss.
 </br>
 
 ## Run 
-- Run stocks-backend repo </br>
-- Run npm start 
+- Run stocks-backend repo `rails s` </br>
+- Run `npm start` 
 
 ## Edge-cases
 - returns null in when "." in symbol search 

@@ -3,6 +3,8 @@ import Portfolios from '../components/Portfolios';
 import {connect} from 'react-redux';
 import {fetchPortfolios} from '../actions/fetchPortfolios';
 import PortfolioInput from '../components/PortfolioInput';
+import Counter from '../components/Counter';
+
 
 class PortfoliosIndexContainer extends Component {
     state = {
@@ -29,6 +31,7 @@ class PortfoliosIndexContainer extends Component {
             </div>
             <div>
                 <PortfolioInput /> 
+                <Counter />
             </div>
             </>   
         )
