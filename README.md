@@ -12,7 +12,7 @@ Prototype in tailwindcss.
 </br>
 
 ## Run 
-- Run <a href="https://github.com/jenleebeaver/stocks-backend">stocks-backend repo</a> `rails s` </br> (_if you are using a bundler run 'bundle exec rails s')_
+- Run <a href="https://github.com/jenleebeaver/stocks-backend">stocks-backend repo</a> using `rails s` </br> (_if you are using a bundler run 'bundle exec rails s')_
 - Run `npm start` 
 
 ## Edge-cases
