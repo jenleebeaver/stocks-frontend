@@ -1,4 +1,14 @@
 
+
+nav {
+   margin-left: 64px; 
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 #portfolio-list {
     list-style: none;
 }
+

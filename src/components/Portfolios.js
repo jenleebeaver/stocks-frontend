@@ -14,11 +14,11 @@ const Portfolios = (props) => {
                 <b>Current Portfolios</b>
             </h2>
                 {/* iterate over each portfolio and use JSX tags */}
-            <ul>
+            <ul className = "divide-y divide-gray-200">
                 {props.portfolios.map(portfolio => (
-                    <li key={portfolio.id}>
+                    <li key={portfolio.id} className = "py-4 flex">
                     {/* <Portfolio key={portfolio.id} portfolio={portfolio} /> */}
-                    <Link className="hover:underline" to={`/portfolio/${portfolio.id}`}>{ portfolio.portfolio_name }</Link>
+                    <Link className="hover:underline text-sm font-medium text-gray-900" to={`/portfolio/${portfolio.id}`}>{ portfolio.portfolio_name }</Link>
                     </li> 
                 ))}
             </ul>

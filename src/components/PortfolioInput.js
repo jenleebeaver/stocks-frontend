@@ -30,7 +30,7 @@ class PortfolioInput extends Component {
 
     render() {
         return (
-            <div className="grid grid-cols-2">
+            <div>
                 {/* work on padding with tailwindcss */}
                 <form onSubmit={this.handleSubmit}
                     className="max-w-xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl font-semibold">

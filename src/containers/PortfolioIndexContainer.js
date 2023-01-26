@@ -3,7 +3,7 @@ import Portfolios from '../components/Portfolios';
 import {connect} from 'react-redux';
 import {fetchPortfolios} from '../actions/fetchPortfolios';
 import PortfolioInput from '../components/PortfolioInput';
-import Counter from '../components/Counter';
+// import Counter from '../components/Counter';
 
 
 class PortfoliosIndexContainer extends Component {
@@ -22,16 +22,18 @@ class PortfoliosIndexContainer extends Component {
     render() {
         return (
             <>
-            <div>
-                <section className="max-w-6xl mx-auto mt-16">
-                    {this.state.loading
-                    ? ( <img width="100" height="100" src="https://media.giphy.com/media/l31p1SkNXGz3l1nwwu/giphy.gif" alt="Loading..." /> )
-                    : ( <Portfolios portfolios={this.props.portfolios} /> )}
-                </section>
-            </div>
-            <div>
-                <PortfolioInput /> 
-                <Counter />
+            <div className="grid grid-cols-2">
+                <div>
+                    <section className="max-w-6xl mx-auto mt-16">
+                        {this.state.loading
+                        ? ( <img width="100" height="100" src="https://media.giphy.com/media/l31p1SkNXGz3l1nwwu/giphy.gif" alt="Loading..." /> )
+                        : ( <Portfolios portfolios={this.props.portfolios} /> )}
+                    </section>
+                </div>
+                <div>
+                    <PortfolioInput /> 
+                    {/* <Counter /> */}
+                </div>
             </div>
             </>   
         )
