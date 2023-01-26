@@ -23,10 +23,14 @@ class SymbolLookupContainer extends Component {
   
     handleSubmit = event => {
       event.preventDefault();
-  
-      fetch(getSearch(this.state.searchTerm))
+      
+      const arr = fetch(getSearch(this.state.searchTerm))
         .then(res => res.json())
-        .then(res => this.setState({ results: res.result }));
+        .then(res => res.result)
+        .then(res => res.includes(item => (item.description == this.state.searchTerm)))
+        // .then(res => res.filter(item => (item.type === "Common Stock")))
+        
+        .then(filteredRes => this.setState({ results: filteredRes }) );
     };
   
     render() {
