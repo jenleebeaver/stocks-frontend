@@ -24,13 +24,16 @@ class SymbolLookupContainer extends Component {
     handleSubmit = event => {
       event.preventDefault();
       
-      const arr = fetch(getSearch(this.state.searchTerm))
+        fetch(getSearch(this.state.searchTerm))
         .then(res => res.json())
         .then(res => res.result)
-        .then(res => res.includes(item => (item.description == this.state.searchTerm)))
-        // .then(res => res.filter(item => (item.type === "Common Stock")))
-        
+        // Filter 1
+        // .then(res => res.includes(item => (item.description == this.state.searchTerm)))
+        // Filter 2
+        .then(res => res.filter(item => (item.type === "Common Stock")))
         .then(filteredRes => this.setState({ results: filteredRes }) );
+        //No filter
+        // .then(res => this.setState({ results: res }) );
     };
   
     render() {
@@ -46,7 +49,7 @@ class SymbolLookupContainer extends Component {
             <input
               id="search-input"
               type="text"
-              placeholder="Search For Stock Symbol Using Symbol, Name, Isin, or Cusip"
+              placeholder="Search For Stock Using Symbol"
               name="stock_symbol_input"
               className="text-center w-full border p-4 my-4"
               onChange={this.handleSearchInputChange}
@@ -57,7 +60,7 @@ class SymbolLookupContainer extends Component {
             </button>
           </form>
        
-         <div className="grid md:grid-flow-col grid-cols-3 grid-rows-3 gap-4">
+         <div className="grid grid-cols-5 grid-rows-3 gap-4">
             {this.state.results?.map(entry => 
             <StockSymbolCard data={entry} key={entry.id} />)
             }

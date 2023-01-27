@@ -17,7 +17,7 @@ const Result = ({
   
     <div
       // className="result"
-      className="max-w-xl w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl"
+      className="max-w-xs w-3/4 mx-auto mt-16 shadow-lg px-4 py-6 rounded-xl"
     >
        <h1 className="font-semibold">Display Symbol:</h1>
        <p>{data.displaySymbol}</p>
